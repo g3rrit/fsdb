@@ -1,0 +1,7 @@
+build
+.ccls-cache
+
+*.o
+*.cmo
+*.cmi
+*.so
