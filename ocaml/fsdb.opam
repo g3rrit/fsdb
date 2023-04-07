@@ -1,0 +1,20 @@
+opam-version: "2.0"
+name: "fsdb"
+version: "0.1"
+synopsis: "[FSDB] File System Database"
+description: """
+[FSDB] File System Database
+"""
+maintainer: "Gerrit Proessl"
+authors: "Gerrit Proessl"
+license: ""
+homepage: ""
+bug-reports: ""
+dev-repo: ""
+depends: [ "ocaml" ]
+build: [
+  [make "-C" ".." ocaml]
+]
+install: [
+  [make "-C" ".." install_ocaml]
+]
