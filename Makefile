@@ -1,4 +1,3 @@
-
 CC = gcc
 CFLAGS = -Werror -Wall -Wextra -pedantic -O3 -std=c11
 BUILD_DIR := build
@@ -42,7 +41,7 @@ ocaml: build $(OCAML_BUILD_DIR)/fsdb.cmxa
 
 $(OCAML_BUILD_DIR)/fsdb.cmxa: $(OCAML_DIR)/fsdb.ml $(OCAML_DIR)/fsdb.ml $(OCAML_DIR)/bind.c
 	cd $(OCAML_BUILD_DIR) && ocamlc -c -o fsdb.cmi ../../$(OCAML_DIR)/fsdb.mli
-	cd $(OCAML_BUILD_DIR) && ocamlc -c -o bind.o ../../$(OCAML_DIR)/bind.c
+	cd $(OCAML_BUILD_DIR) && ocamlc -c -ccopt -I$(OCAML_INC) -o bind.o ../../$(OCAML_DIR)/bind.c
 	cd $(OCAML_BUILD_DIR) && ocamlmklib -o bind bind.o
 	cd $(OCAML_BUILD_DIR) && ocamlopt -c -o fsdb.cmx ../../$(OCAML_DIR)/fsdb.ml
 	cd $(OCAML_BUILD_DIR) && ocamlopt -linkall -a -o fsdb.cmxa $(abspath $(BUILD_DIR)/libfsdb.a) $(abspath $(OCAML_BUILD_DIR)/libbind.a) fsdb.cmx

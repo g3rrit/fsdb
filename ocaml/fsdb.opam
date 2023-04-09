@@ -16,5 +16,5 @@ build: [
   [make "-C" ".." ocaml]
 ]
 install: [
-  [make "-C" ".." install_ocaml]
+  [make "-C" ".." ocaml]
 ]

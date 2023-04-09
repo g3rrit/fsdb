@@ -27,12 +27,12 @@ def store(id: str, buffer: bytes):
     cdef int err
 
     PyBytes_AsStringAndSize(buffer, &buffer_, &size)
- 
+
     err = c_store(
-        PyUnicode_AsUTF8(id),
-        buffer_,
-        size,
-    )
+            PyUnicode_AsUTF8(id),
+            buffer_,
+            size,
+            )
 
     if err != 0:
         raise FSDB_Error("Error during stores")
@@ -44,10 +44,10 @@ def load(id: str) -> bytes:
     cdef int err
 
     err = c_load(
-        PyUnicode_AsUTF8(id),
-        &buffer,
-        &len
-    )
+            PyUnicode_AsUTF8(id),
+            &buffer,
+            &len
+            )
 
     if err != 0:
         raise FSDB_Error("Error during load")

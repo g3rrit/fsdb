@@ -14,9 +14,9 @@ satisfies a very specific use case.
 
 ## Todo
 
- - [ ] Add documentation
+ - [ ] Add better documentation
  - [ ] Add better error return values + error messages
  - [ ] Additional language bindings
-    - [ ] Python
-    - [ ] Ocaml
+    - [X] Python
+    - [X] Ocaml
     - [ ] Scala
